@@ -1,0 +1,67 @@
+<html>
+    <head>
+    <script type = "text/javascript">
+        var br = "<br />";
+        function Account(type,num,fname,lname,bal){
+            this.acctType = type;
+            this.acctNumber = num;
+            this.Firstname = fname;
+            this.Lastname = lname;
+            this.Balance = bal;
+            this.deposit = deposit;
+            this.withdraw = withdraw;
+            this.changename = changename;
+            this.inquiry= inquiry;
+            this.displayinfo = displayinfo;
+
+        }
+
+        function deposit(money){
+            this.Balance = this.Balance + money;
+            document.write("Your current balance is: " + this.Balance + br );
+        }
+
+        function withdraw(money){
+            this.Balance = this.Balance - money;
+            document.write("Your current balance is: " + this.Balance + br );
+        }
+
+        function changename(fname,lname){
+            this.fname = fname;
+            this.lname = lname;
+            document.write("Your name is now: " + this.fname + " " + this.lname + br);
+        }
+
+        function inquiry(){
+            document.write("Your current balance is: " + this.Balance + br);
+            
+        }
+
+        function displayinfo(){
+            document.write("Your name is: " + this.fname + " " + this.lname + br );
+            document.write("Your account number is: " + this.acctNumber + br );
+            document.write("Your account type is: " +this. acctType + br );
+            document.write("Your current balance is: " + this.Balance + br );
+        }
+        
+ </script>
+</head>
+<body>
+<script type = "text/javascript">
+
+    var br = "<br />";
+     document.write("Account program" + br);
+     document.write("This program creates an account. " + br);
+     var mysaavingsacct = new Account("Savings",123456,"Aryan","Patel",1000000000.00);   
+     document.write("Your account has been created." + br); 
+
+    mysaavingsacct.deposit(100.00);
+    mysaavingsacct.withdraw(200.00);
+    mysaavingsacct.changename("Deep","Patel");
+    mysaavingsacct.inquiry();
+    mysaavingsacct.displayinfo();
+
+  </script>
+
+</body>
+</html>
