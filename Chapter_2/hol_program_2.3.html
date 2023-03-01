@@ -1,0 +1,40 @@
+<html>
+<body>
+<script type = "text/javascript">
+
+    var data1,data2,data3,data4;
+    var total,avg1,avg2,avg3,avg4;
+    var BR = "<br />";
+
+    data1 = prompt("Enter expense Rent Payment: " + BR);
+    data1 = parseInt(data1);
+
+    data2 = prompt("Enter expense for food: " + BR);
+    data2 = parseInt(data2);
+
+    data3 = prompt("Enter expense for utilities: " + BR);
+    data3 = parseInt(data3);
+
+    data4= prompt("Enter other expenses : " + BR);
+    data4 = parseInt(data4);
+
+    total = data1 + data2 + data3 + data4;
+    
+    avg1 = (data1 / total) * 100;
+    avg2 = (data2 / total) * 100;
+    avg3 = (data3 / total) * 100;
+    avg4 = (data4 / total) * 100;
+
+    document.write(" The average of expense on Rent Payment is: " + avg1.toFixed(2) + BR);
+    document.write(" The average of expense on food  is: " + avg2.toFixed(2) + BR);
+    document.write(" The average of utilities expenses is: " + avg3.toFixed(2) + BR);
+    document.write(" The average of other expenses  is: " + avg4.toFixed(2) + BR);
+
+
+
+
+
+
+</script>
+</body>
+</html>

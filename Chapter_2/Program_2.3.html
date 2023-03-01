@@ -1,0 +1,39 @@
+<html>
+<body>
+<script type = "text/javascript">
+
+// Program name: welcome.html
+// Purpose: Use a display statement in a
+// JavaScript program
+// Author: Aryan Patel
+// Date last modified: 28-Feb-2023
+
+var totCust;
+var avgCust;
+var count1,count2,count3,count4;
+
+var num_hours = 4.0;
+var BR = "<br />";
+var ES = "";
+
+document.write("Sunshine Books Statistics Program" + BR);
+
+count1 = prompt("Enter the no. of customers for Hour 1:",ES);
+count1 = parseInt(count1);
+count2 = prompt("Enter the no. of customers for Hour 2:",ES);
+count2 = parseInt(count2);
+count3 = prompt("Enter the no. of customers for Hour 3:",ES);
+count3 = parseInt(count3);
+count4 = prompt("Enter the no. of customers for Hour 4:",ES);
+count4 = parseInt(count4);
+
+totCust = count1 + count2 + count3 + count4;
+avgCust = totCust / num_hours;
+document.write("Total no. of customers: " + totCust + BR);
+document.write("Average customers/hour: " + avgCust + BR);
+
+document.write("Thank you for using this program!" + BR);
+
+</script>
+</body>
+</html>
