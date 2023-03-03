@@ -1,0 +1,27 @@
+<html>
+    
+    
+
+<body >
+    <script type = "text/javascript">
+    var name,email,num;
+    var salestax = 0.06;
+    var button = 0.99;
+    var shippingcharge = 2;
+    var br = "<br />";
+    
+    name = prompt("Enter your name");
+    email = prompt("Enter your email");
+    num = prompt("Enter the number of order");
+
+    document.write("Your name is: " + name + br);
+    document.write("Your email is: " + email + br);
+    document.write("Your total number of order is: " + num + br);
+    document.write("Total salestax is: " + button * salestax * num + br);
+    document.write(" So Your total order value is:  " + (button * salestax * num + shippingcharge) + br);
+
+</script>
+
+</body>
+
+</html>
