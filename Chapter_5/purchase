@@ -1,0 +1,47 @@
+<html>
+    
+    
+
+<body >
+    <script type = "text/javascript">
+   
+   
+   var purchase;
+   purchase = prompt("Enter the order value");
+   purchase = parseInt(purchase);
+
+   if(purchase <= 7){
+    document.write("Total purchase: " + purchase);
+   }
+   else if(purchase >= 8 && purchase <= 21){
+    document.write("Total purchase: " + (purchase + 1));
+   }
+   else if(purchase >= 22 && purchase <= 35){
+    document.write("Total purchase: " + (purchase +2));
+   }
+   else if(purchase >= 36 && purchase <= 49){
+    document.write("Total purchase: " + (purchase +3));
+   }
+   else if(purchase >= 50 && purchase <= 64){
+    document.write("Total purchase: " + (purchase +4));
+   }
+   else if(purchase >= 65 && purchase <= 78){
+    document.write("Total purchase: " + (purchase +5));
+   }
+   else if(purchase >= 79 && purchase <= 92){
+    document.write("Total purchase: " + (purchase +6));
+   }
+   else if(purchase >= 93 && purchase <= 99){
+    document.write("Total purchase: " + (purchase +7));
+   }
+   else{
+    document.write("Enter valid number");
+   }
+
+
+
+</script>
+
+</body>
+
+</html>
