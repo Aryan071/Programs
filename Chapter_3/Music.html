@@ -1,0 +1,71 @@
+<html>
+    <head>
+    <script type = "text/javascript">
+       
+       var songname;
+       var paymenttype;
+       var songprice = .99;
+       var nl = "\n";
+      
+
+       function settype(ccType){
+        paymenttype = ccType;
+       }
+
+       function displayOrder(){
+        var firstname = document.orderform.firstname.value;
+        var lastname = document.orderform.lastname.value;
+        var email = document.orderform.email.value;
+        var songname = document.orderform.songchoice.value;
+
+        document.orderform.fullorder.value = "Here is your order: " + nl + nl + 
+        "Song name: " + songname + nl +
+        "Your name: " + firstname + " " + lastname + nl +
+        "Your Email: " + email + nl + 
+        "Payment type: " + paymenttype + nl +
+        "Total cart value: " + songprice.toFixed(2) + nl + 
+        "Thanks for placing your order!!!!";
+
+       }
+
+
+       
+    </script>
+</head>
+<body bgcolor="Azure">
+    <h2>Music Delivery Order From</h2>
+    <form name="orderform" action="">
+   <strong>Select your song: </strong><br>
+   <select name = "songchoice">
+    <option  value="Closer (The Chainsmoker)">Closer (The Chainsmoker)</option>
+    <option value="Ankhon mein teri (KK)">Ankhon mein teri (KK)</option>
+    <option value="Call you mine (The Chainsmoker)">Call you mine (The Chainsmoker) </option>
+    <option value="Apna bana le piya (Arijit Singh)">Apna bana le piya (Arijit Singh)</option>
+    <option value="Bin tere sanam (Udit Narayan)">Bin tere sanam (Udit Narayan)</option>
+    <option value="Mera dil bhi kitna pagal hai (Kumar Sanu)">Mera dil bhi kitna pagal hai (Kumar Sanu)</option>
+   </select> <br>
+
+   <strong> Select your payment option</strong> <br>
+   <input type="radio" name="Payment" value="Paytm" onclick="settype(this.value)"> Paytm <br>
+   <input type="radio" name="Payment" value="Debit card" onclick="settype(this.value)"> Debit card <br>
+   <input type="radio" name="Payment" value="Credit card" onclick="settype(this.value)"> Credit card <br>
+   <input type="radio" name="Payment" value="Cash On delivery" onclick="settype(this.value)"> Cash on delivery <br>
+
+   <strong>Enter your Details</strong><br>
+  <input type="text" name="firstname" placeholder = "Enter your first name" value="" size="40"><br>
+  <input type="text" name="lastname" placeholder = "Enter your last name" value="" size="40"><br>
+  <input type="text" name="email" placeholder = "Enter your Email" value="" size="40"><br>
+
+   
+   <textarea name="fullorder" readonly = "true" cols="50" rows="10" value = ""></textarea>
+
+
+
+    </form>
+
+
+    <input type="button" value="Display Order" name="displayOrder" onclick="displayOrder()" > <br>
+
+</body>
+
+</html>
