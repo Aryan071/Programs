@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <script>
+      
+      var total;
+      var num = 3;
+      num = parseInt(num);
+      var batch;
+      var morning,afternoon,evening;
+      var BR = "<br />";
+
+     
+      while(num--){
+        batch = prompt("Batch time (M/A/E)");
+
+        if(batch == 'M'){
+        morning = prompt("Enter the number of cards");
+        morning = parseInt(morning);
+      }
+        if(batch == 'A'){
+        afternoon = prompt("Enter the number of cards");
+        afternoon = parseInt(afternoon);
+      }
+        if(batch == 'E'){
+        evening = prompt("Enter the number of cards");
+        evening = parseInt(evening);
+      }
+      }
+      
+    
+      
+     
+     total = morning + afternoon + evening;
+     document.write("Total is " + total + BR);
+
+    </script>
+</body>
+</html>
