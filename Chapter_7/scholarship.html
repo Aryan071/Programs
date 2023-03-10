@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <script>
+      let income = prompt("Enter your family income");
+      income = parseInt(income);
+      let sat = prompt("Enter your SAT score");
+      sat = parseInt(sat);
+      let alumnus = prompt("Is your parent alumnus (Y/N)?");
+
+      if (sat >= 1400 && income < 100000) {
+        document.write(
+          "Student is accepted & student is granted a scholarship"
+        );
+      } else if (sat >= 1200 && alumnus == "Y" && income >= 100000) {
+        document.write("Student is accepted");
+      }
+    </script>
+  </body>
+</html>
