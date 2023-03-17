@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+//      var username;           // username entered by user
+// var charAny;            // text character identified in username
+// var anyNum = false;     // digit variable used to detect whether the username has one or not
+// var index;
+// index = parseInt(index);             // index loop variable
+// var BR = "<br />";      //break
+// var ES = "";            //space
+
+// // Display program requirements for the username requested
+
+// username = prompt("Please enter your username: ", ES);
+
+// // Check for length of username
+// while (username.length < 8) {
+//     document.write("Your username must be at least 8 characters long." + BR);
+//     username = prompt("Please enter your username: ", ES);
+// }
+
+// // Check that first character is a letter
+// // Substring function has three arguments: string, starting position, and ending position
+// charAny = username.substr(0, 1);
+
+// function isLetter(char) {
+//   return char.toLowerCase() != char.toUpperCase()
+// }
+// while (charAny !== isLetter()) {
+//     document.write("The first character of your username must be a letter." + BR);
+//     username = prompt("Please enter your username: ", ES);
+// }
+
+// // Check that there's at least one digit in the username
+
+
+
+// while (anyNum !== false) {
+// // Check each character, set anyNum to true if a digit
+//     for (index = 1; index < username.substr(index, index + 1); index++) {
+//         anyNum = username.substr(index, index + 1);
+//         if (isNumeric(charAny)) {
+//             anyNum = true;
+//         }
+//     }
+
+//     // If anyNum is false there were no numerics
+//     if (anyNum !== true) {
+//         document.write("Your username must include at least 1 digit." + BR);
+//         username = prompt("Please enter your username: ", ES);
+//     }
+// }
+
+// // Thank the user and end the program
+// document.write("Thank you! Your new username is: " + username);
+
+
+function checkUsername(test){
+    var good = true;
+    if (!test[0].match(/[a-z]/i)) good = false; // first character is not a letter
+    if (test.length < 8) good = false; // less than 8 characters
+    if (test.match(/\d+/g) == null) good = false; //contains no numbers
+    return good;
+}
+ 
+var username = prompt("Enter the username");
+
+
+while(checkUsername(username) !== true){
+  username = prompt("Enter the username");
+}
+
+  document.write(username);
+
+
+    </script>
+  </body>
+</html>
