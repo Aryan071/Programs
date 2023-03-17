@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <body>
+    <script>
+      var sen = prompt("Enter the sentence");
+      var choose = prompt(
+        "Enter your choice: '1' for count, '2' for backward and '3' for exit"
+      );
+      choose = parseInt(choose);
+      var len = sen.length;
+      var spaces = 0;
+      spaces = parseInt(spaces);
+      var words = 0;
+      words = parseInt(words);
+
+      if (choose == 1) {
+        for (let index = 0; index < len; index++) {
+          if (sen[index] == " ") {
+            spaces++;
+          }
+        }
+
+        if (spaces >= 1) {
+          words = spaces + 1;
+        }
+        document.write(words);
+      }
+
+      if (choose == 2) {
+        words = sen.split(" ");
+        var rev = words.reverse();
+        document.write(rev.join(" "));
+      }
+
+      if (choose == 3) {
+        exit();
+      }
+    </script>
+  </body>
+</html>
