@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script>
+      var size = 5000000;
+      var index;
+      var found = false;
+      var numberArray;
+      var searchNumber;
+      var numComparisons;
+      var d1, d2, diff;
+      var low, high;
+      var BR = "<br />";
+      var ES = "";
+
+      numberArray = new Array(size);
+
+      for (index = 0; index < size; index++) {
+        numberArray[index] = index + 1;
+      }
+
+      searchNumber = prompt("Enter a nuber between 1 and 500000", ES);
+      index = 0;
+
+      numComparisons = 0;
+      d1 = new Date();
+
+      while (index < size && (!found)) {
+        numComparisons++;
+        if (numberArray[index] == searchNumber) {
+          d2 = new Date();
+          found = true;
+          document.write("Match found at subscript: " + index + "." + BR);
+        }
+        index++;
+      }
+      if (!found) {
+        d2 = new Date();
+        document.write("Sorry, no match found");
+      }
+
+      diff = d2 - d1;
+      document.write("Sequential search: " + diff + BR);
+      document.write("Number of comparisons: " + numComparisons + BR + BR);
+
+      found = false;
+      low = 0;
+      high = size;
+      index = Math.floor((low + high) / 2);
+      numComparisons = 0;
+      d1 = new Date();
+
+      while (low <= high && !found) {
+        numComparisons++;
+        if (numberArray[index] == searchNumber) {
+          d2 = new Date();
+          found = true;
+          document.write("Match found at subscript: " + index + "." + BR);
+        } else {
+          if (numberArray[index] > searchNumber) {
+            high = index - 1;
+          } else {
+            low = index + 1;
+          }
+          index = Math.floor((low + high) / 2);
+        }
+      }
+      if (!found) {
+        d2 = new Date();
+        document.write("Sorry, no match found");
+      }
+
+      diff = d2 - d1;
+      document.write("Binary search: " + numComparisons + BR);
+      document.write("Number of comparisons: " + numComparisons + BR + BR);
+    </script>
+  </body>
+</html>
