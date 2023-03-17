@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script>
+      var text;
+      var num;
+      var ES = "";
+      var BR = "<br />";
+      var MSG = "JavaScript says the variable = ";
+
+      text = prompt("Enter a number and press Enter");
+      document.write("You entered: " + text + BR);
+
+      if (text == null) {
+        document.write(MSG + "null" + BR);
+      }
+
+      if (text == ES) {
+        document.write(MSG + "an empty string" + BR);
+      }
+
+      if (isNaN(text)) {
+        document.write(MSG + "NaN" + BR);
+      }
+
+      num = parseFloat(text);
+      document.write("Your entry converted to a number is: " + num + BR);
+
+      if (num == null) {
+        document.write(MSG + "null" + BR);
+      }
+      if (num == ES) {
+        document.write(MSG + "an empty string" + BR);
+      }
+
+      if (isNaN(num)) {
+        document.write(MSG + "NaN" + BR);
+      }
+    </script>
+  </body>
+</html>
