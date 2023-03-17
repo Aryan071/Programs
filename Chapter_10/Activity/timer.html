@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <script>
+
+        var index;
+        var x;
+        var d1,d2;
+
+        d1 = new Date();
+        for (let index = 0; index < 600000; index++) {
+            x = 123.456789/987.654321;
+        }
+
+        d2 = new Date();
+
+        var diff = d2 - d1;
+        document.write("Difference in time is: " + diff + "milliseconds");
+    </script>
+</body>
+</html>
