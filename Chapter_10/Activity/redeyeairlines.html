@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body bgcolor="salmon">
+    <h2>Redeye Airlines Flight Information Form</h2>
+    <form name="Info" action="">
+      <p>
+        Select your stating city: <br />
+        <select name="statingcity">
+          <option value="Ahmedabad">Ahmedabad</option>
+          <option value="Mehsana">Mehsana</option>
+          <option value="Vadodara">Vadodara</option>
+          <option value="Surat">Surat</option>
+          <option value="Gandhinagar">Gandhinagar</option>
+        </select>
+      </p>
+
+      <p>
+        Select your destination city: <br />
+        <select name="endingcity">
+          <option value="Ahmedabad">Ahmedabad</option>
+          <option value="Mehsana">Mehsana</option>
+          <option value="Vadodara">Vadodara</option>
+          <option value="Surat">Surat</option>
+          <option value="Gandhinagar">Gandhinagar</option>
+        </select>
+      </p>
+
+      <input
+        type="button"
+        value="Find Flights"
+        name="gobutton"
+        onclick="searcharray()"
+      />
+      <br />
+      <br />
+
+      <textarea name="flightbox" readonly="true" cols="80" rows="6"></textarea>
+    </form>
+
+    <script>
+      var NL = "\n";
+      var size = 20;
+      var index;
+      var fromcityname;
+      var tocityname;
+      var startcity;
+      var endcity;
+      var flightnumber;
+      var priceperperson;
+
+      function loadarray() {
+        startcity = new Array(
+          "Ahmedabad",
+          "Ahmedabad",
+          "Ahmedabad",
+          "Ahmedabad",
+          "Surat",
+          "Surat",
+          "Surat",
+          "Surat",
+          "Mehsana",
+          "Mehsana",
+          "Mehsana",
+          "Mehsana",
+          "Vadodara",
+          "Vadodara",
+          "Vadodara",
+          "Vadodara",
+          "Gandhinagar",
+          "Gandhinagar",
+          "Gandhinagar",
+          "Gandhinagar"
+        );
+
+        endcity = new Array(
+          "Surat",
+          "Mehsana",
+          "Vadodara",
+          "Gandhinagar",
+          "Ahmedabad",
+          "Mehsana",
+          "Vadodara",
+          "Gandhinagar",
+          "Surat",
+          "Ahmedabad",
+          "Vadodara",
+          "Gandhinagar",
+          "Surat",
+          "Mehsana",
+          "Ahmedabad",
+          "Gandhinagar",
+          "Surat",
+          "Mehsana",
+          "Vadodara",
+          "Ahmedabad"
+        );
+
+        flightnumber = new Array(
+          "RE103",
+          "RE105",
+          "RE107",
+          "RE109",
+          "RE303",
+          "RE203",
+          "RE309",
+          "RE301",
+          "RE507",
+          "RE503",
+          "RE603",
+          "RE102",
+          "RE403",
+          "RE112",
+          "RE223",
+          "RE433",
+          "RE903",
+          "RE106",
+          "RE445",
+          "RE110"
+        );
+
+        priceperperson = new Array(
+          110.0,
+          100.0,
+          70.0,
+          75.0,
+          120.0,
+          65.0,
+          89.0,
+          90.0,
+          110.0,
+          100.0,
+          70.0,
+          75.0,
+          120.0,
+          65.0,
+          89.0,
+          90.0,
+          70.0,
+          120.0,
+          65.0,
+          89.0
+        );
+      }
+
+      function searcharray() {
+        document.Info.flightbox.value =
+          "WELCOME TO REDEYE AIRLINES: " + "All fights are on time" + NL + NL;
+
+        fromcityname = document.Info.startcity.value;
+        tocityname = document.Info.endingcity.value;
+
+        if (fromcityname == tocityname) {
+          document.Info.flightbox.value +=
+            "Starting and destination city can't be the same." + NL;
+        }
+        for (index = 0; index < size; index++) {
+          if (startcity[index].toUppercase() == fromcityname &&
+            endcity[index].toUppercase() == tocityname
+          ) {
+            document.Info.flightbox.value +=
+              startcity[index] +
+              "TO" +
+              endcity[index] +
+              ", Flight" +
+              flightnumber[index] +
+              " , Price per person: " +
+              priceperperson[index].toFixed(2) +
+              NL;
+          }
+        }
+      }
+
+      loadarray();
+    </script>
+  </body>
+</html>
