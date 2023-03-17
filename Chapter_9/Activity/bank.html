@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      var br = "<br />";
+
+      function deposit(Balance) {
+        var money = prompt("Enter the money which you have to deposit");
+        money = parseInt(money);
+        Balance = Balance + money;
+        document.write("Your current balance is: " + Balance + br);
+      }
+
+      function withdraw(money) {
+        var money = prompt("Enter the money which you have to withdraw");
+        money = parseInt(money);
+        Balance = Balance - money;
+        document.write("Your current balance is: " + Balance + br);
+      }
+
+      function inquiry() {
+        document.write("Your current balance is: " + Balance + br);
+      }
+    </script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var br = "<br />";
+      var balance = prompt("Enter your current balace");
+      balance = parseInt(balance);
+
+      var enter = prompt(
+        "Enter 'D' for deposit" +
+          br +
+          "Enter 'W' for withdraw" +
+          br +
+          "Enter 'I' for inquiry"
+      );
+      enter = enter.toUpperCase();
+
+      if (enter == "D") {
+        balance = deposit(balance);
+      } else if (enter == "W") {
+        balance = withdraw(balance);
+      } else if (enter == "I") {
+        balance = inquiry(balance);
+      } else {
+        document.write("Enter valid value");
+      }
+    </script>
+  </body>
+</html>
