@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <script>
+      // let temp = [];
+      // let BR = "<br />";
+
+      // for (let index = 1; index <= 5; index++) {
+      //     var tempi = prompt("Enter the temperature of day " + index);
+      //     tempi = parseInt(tempi);
+      //     temp.push(tempi)
+      //     document.write("The temperature of day " + index + " is " + tempi + BR);
+      // }
+
+      // let min = temp[0];
+      // let max = temp[0];
+      // console.log(min)
+      // for (let index = 1; index < 5; index++) {
+      //     if (temp[index] < min) {
+      //         min = temp[index];
+      //     }
+
+      // }
+
+      // for (let index = 1; index < 5; index++) {
+      //     if (temp[index] > max) {
+      //         max = temp[index];
+      //     }
+
+      // }
+
+      // let sum = temp[0] + temp[1] + temp[2] + temp[3] + temp[4];
+      // let avg = sum/5;
+
+      // document.write("The max temp is " + max + BR);
+      // document.write("The min temp is " + min + BR);
+      // document.write("The average temp is " + avg + BR);
+
+      let week = new Array(7);
+      var nl = "<br />";
+      let day;
+      
+      let num = prompt("Enter the number of week");
+      num = parseInt(num);
+    //   for (let index = 1; index <= num; index++) {
+       
+    //     for (let index = 0; index < 7; index++) {
+    //       week[index] = prompt("Enter the temerature of week " + (num - num + i) + " & day " + (index + 1));
+    //     }
+    //     i++;
+    //   } 
+
+    //   while (num--) {
+    //     for (let index = 0; index < 7; index++) {
+    //       document.write("The temperature of week " +  (num - num + i) + week[index] + nl);
+    //       i++;
+    //     }
+    //   }
+    for (let index = 1; index <= num; index++) {
+        let i = 1;
+           for (let index = 0; index < 7; index++) {
+             week[index] = prompt("Enter the temerature of week " + (num - num + i) + " & day " + (index + 1));
+           }
+           ++i;
+    } 
+     let x = 1;
+    document.write(" Temperature for week " + (num - num + x));
+    for (let index = 0; index < 7; index++) {
+        
+        document.write( week[index] + nl);
+        x++;
+
+    }
+    </script>
+  </body>
+</html>
