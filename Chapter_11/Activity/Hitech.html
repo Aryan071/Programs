@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body bgcolor="LightCyan">
+    <h2>Hi-Tech Investments Mailing List Form</h2>
+    <form name="Mail" action="">
+      <strong>Last name:</strong><br />
+      <input
+        type="text"
+        name="lastname"
+        id=""
+        size="40"
+        onchange="changefield('lastname', this.value)"
+      />
+      <br />
+
+      <strong>First name:</strong><br />
+      <input
+        type="text"
+        name="firstname"
+        id=""
+        size="40"
+        onchange="changefield('firstname',this.value)"
+      /><br />
+
+      <strong>City:</strong><br />
+      <input
+        type="text"
+        name="city"
+        id=""
+        size="40"
+        onchange="changefield('city',this.value)"
+      /><br />
+
+      <strong>State:</strong><br />
+      <input
+        type="text"
+        name="state"
+        id=""
+        size="2"
+        onchange="changefield('state',this.value)"
+      /><br />
+
+      <strong>Record:</strong><br />
+      <input
+        type="text"
+        name="subscript"
+        value="0"
+        id=""
+        size="2"
+        onchange="changefield('state',this.value)"
+      /><br />
+
+      <input
+        type="button"
+        value="Go To"
+        onclick="loadform(document.Mail.subscript.value)"
+      />
+      <br />
+
+      <input type="button" value="First" onclick="loadform(0)" />
+      <input type="button" value="Previous" onclick="loadform(-2)" />
+      <input type="button" value="Next" onclick="loadform(-1)" />
+      <input type="button" value="Last" onclick="loadform(-3)" /><br />
+
+      <strong>Current record:</strong>
+      <input type="text" name="message" readonly="readonly" id="" size="3" />
+
+      <script>
+        loadArrays();
+
+        var size = 11;
+        var index;
+        var currentpos = 0;
+        var lastname;
+        var firstname;
+        var city;
+        var state;
+
+        function loadArrays() {
+          lastname = new Array(
+            "Adams",
+            "Baker",
+            "Charles",
+            "Dawber",
+            "Grover",
+            "Jackson",
+            "Zerza",
+            "Robbins",
+            "Wilson",
+            "Fraser"
+          );
+
+          firstname = new Array(
+            "Paul",
+            "Merri",
+            "Michael",
+            "Carla",
+            "Kris",
+            "Paula",
+            "Peggy",
+            "Lynn",
+            "Darla",
+            "David"
+          );
+
+          city = new Array(
+            "Surat",
+            "Mehsana",
+            "Vadodara",
+            "Gandhinagar",
+            "Ahmedabad",
+            "Rajkot",
+            "Anand",
+            "Nadiad",
+            "Unjha",
+            "Patan"
+          );
+
+          state = new Array(
+            "GJ",
+            "MH",
+            "RJ",
+            "TN",
+            "UP",
+            "MP",
+            "PUN",
+            "J&K",
+            "MA",
+            "CA"
+          );
+
+          loadform(0);
+        }
+
+        function loadform(sub) {
+          if (sub == "" || sub == null || isNaN(sub)) {
+            sub = 0;
+          }
+
+          if (sub == -2) {
+            sub = currentpos - 1;
+            if (sub < 0) {
+              sub = 0;
+            }
+          }
+
+          if (sub == -1) {
+            sub = currentpos + 1;
+            if (sub >= size) sub = size - 1;
+          }
+
+          if (sub == -3) {
+            sub = size - 1;
+          }
+
+          currentpos = sub;
+          document.Mail.message.value = currentpos;
+          document.Mail.lastname.value = lastname[sub];
+          document.Mail.firstname.value = firstname[sub];
+          document.Mail.city.value = city[sub];
+          document.Mail.state.value = state[sub];
+
+          document.Mail.subscript.value = sub;
+        }
+
+        function changefield(field, fieldvalue) {
+          if (field == "lastname") {
+            lastname[currentpos] == fieldvalue;
+          }
+          if (field == "firstname") {
+            firstname[currentpos] == fieldvalue;
+          }
+          if (field == "city") {
+            city[currentpos] == fieldvalue;
+          }
+          if (field == "state") {
+            state[currentpos] == fieldvalue;
+          }
+        }
+      </script>
+    </form>
+  </body>
+</html>
